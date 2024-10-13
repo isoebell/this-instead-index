@@ -10,6 +10,18 @@
             display: none;
         }
 
+        * {
+            font-family: 'FragmentMono', monospace;
+        }
+
+        .header {
+            margin: 0.5em;            
+        }
+
+        .topic {
+            margin: 0.5em;
+        }
+
         @font-face {
         font-family: 'FragmentMono';
         src: url('fonts/FragmentMono-Regular.ttf') format('truetype');
@@ -17,9 +29,15 @@
         font-style: normal;
         }
 
-        * {
-            font-family: 'FragmentMono', monospace;
+        .infoText a {
+         color: #000;
         }
+
+        .infoText a:hover {
+        color: #00ff7b;
+        }
+
+
     </style>
 </head>
 <body>
@@ -196,7 +214,7 @@
         </div>
     </div>
 
-    <div class="topic"></div>
+    <div class="topic">
         <p>To listen to</p>
         <div class="grid-container">
             <div class="item">
@@ -274,7 +292,7 @@
         </div>
     </div>
 
-    <div class="topic"></div>
+    <div class="topic">
     <p>To watch</p>
     <div class="grid-container">
         <div class="item">
