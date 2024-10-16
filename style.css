@@ -56,7 +56,8 @@ html, body {
 }
 
 .header-title {
-    width: 20%; /* Width of the title */
+    width: max-content; /* Width of the title */
+    padding-right: 2%;
 }
 
 .about, .contact {
