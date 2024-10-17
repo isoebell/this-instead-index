@@ -21,33 +21,74 @@ html, body {
 .nav-container {
     display: flex;
     align-items: flex-start; /* Center the items vertically */
-}
-
-.navigation-bar {
-    display: block; /* Display the navigation bar */
-    width: 50vw; /* Full width of the navigation bar */
-}
-
-.nav-bar02 {
-    display: block; /* Display the navigation bar */
-    width: 50vw; /* Full width of the navigation bar */
+    margin-top: 0.3%; /* Space above the navigation bar */
+    margin-left: 0.3%; /* Space to the left of the navigation bar */
 }
 
 .header {
     text-align: left;
     font-size: 1em;
-    display: flex; /* Flex for the header */
-    align-items: flex-start; /* Align the text to the top */
-    width: 100%; /* Width of the header */
+    width: 15vw; /* Set width for header */
     margin-bottom: 2%; /* Space below the header */
+}
+
+.about {
+    width: 35vw; /* Set width for about section */
+    margin-left: 2%; /* Space between about and contact */
+}
+
+.contact {
+    width: 50vw; /* Set width for contact section */
+}
+
+@media (max-width: 800px) {
+    .nav-container {
+        display: block; /* Stack items vertically */
+        align-items: start; /* Align items to the start */
+    }
+
+    .header {
+        text-align: left; /* Center the header text */
+        margin-bottom: 2%; 
+    }
+
+    .header-title {
+        font-size: 2em; /* Increase font size for visibility */
+    }
+
+    .content-container {
+        display: flex; 
+        flex-direction: column; /* Stack items in a column */
+        width: 100%; 
+        flex: 1; /* Allow content to grow */
+    }
+
+    .about, .contact {
+        display: flex; 
+        width: 100%; /* Allow both sections to take full width */
+        justify-content: space-between; /* Space them evenly */
+        margin: 1%; /* Space between about and contact */
+    }
+
+    .about .title, .contact .title {
+        cursor: pointer; 
+        text-decoration: underline; 
+    }
 }
 
 .footer {
     display: block; /* Display the footer */
     padding-top: 1em; /* Padding inside the footer */
     margin-top: auto; /* Push footer to the bottom */
-    background-color: #00ff2a; /* Background color for visibility */
-    height: 50px; /* Set a fixed height for the footer */
+    background-color: #ff6600; /* Background color for visibility */
+    height: 20vh; /* Set a fixed height for the footer */
+    align-items: start; /* Align items to the top */
+}
+
+.footer p {
+    align-items: start; /* Align items to the top */
+    padding-left: 0.3%; /* Space from the left edge */
+    padding-bottom: 1%; /* Space below the text */
 }
 
 .footer a {
@@ -55,42 +96,18 @@ html, body {
     text-decoration: underline; /* Underline the links */
 }
 
+.footer a:hover {
+    color: #00ff2a; /* Change the color when hovered */
+}
+
 .header-title {
     width: max-content; /* Width of the title */
     padding-right: 2%;
 }
 
-.about, .contact {
-    display: flex; /* Keep the structure as flex */
-    flex-grow: 1; /* Allow both sections to grow equally */
-    justify-content: flex-start; /* Align content to the start */
-}
-
-.about {
-    margin-left: 2%; /* Space between about and contact */
-    width: 10%; /* Width of the about section */
-}
-
-.contact {
-    align-self: flex-start; /* Align to the top */
-}
-
-.about .title {
+.about .title, .contact .title {
     cursor: pointer; /* Show that it's clickable */
     text-decoration: underline; /* Underline the text */
-}
-
-.about .infoText {
-    width: 30vw; /* Set wider width for the infoText */
-}
-
-.contact .title {
-    cursor: pointer; /* Show that it's clickable */
-    text-decoration: underline; /* Underline the text */
-}
-
-.title {
-    cursor: pointer; /* Show that it's clickable */
 }
 
 .topic-title {
@@ -108,15 +125,54 @@ html, body {
     display: flex; /* Flex for the content */
     width: 100%; /* Full width below the header */
     flex: 1; /* Allow the content to grow */
+    margin-top: 0.3%;
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+}
+
+@media (max-width: 800px) {
+    .content-container {
+        flex-direction: column; /* Stack items in a column */
+    }
+
+    .content-container a {
+        flex: 0 1 100%; /* Full width for each item */
+        margin: 0.5em 0; /* Space between images vertically */
+    }
+
+    .folders {
+        order: 1; /* Ensure folders come first */
+        width: 100%; /* Full width for folders */
+        width: 100%; /* Full width for mobile */
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid columns if needed */
+    }
+
+    .items-list {
+        order: 2; /* Ensure items-list comes second */
+        width: 100%; /* Full width for items-list */
+    }
 }
 
 .folders {
-    display: block; /* Flex for the folder */
+    margin: 0.2em;
+    margin-top: 2%;
+    display: grid; /* Change to grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 4 columns across */
+    gap: 1em; /* Space between grid items */
     width: 50vw; /* Width of the folder */
-    height: 100%; /* Adjust height to fill available space */
-    align-items: flex-start; /* Align the text to the top */
-    text-align: left; /* Align the text to the left */
-    background-color: #00ff2a; /* Background color of the folder */
+    height: auto; /* Adjust height to fit content */
+    align-items: start; /* Align items to the start */
+    text-align: left; /* Align text to the left */
+}
+
+.folders img {
+    width: 80%; /* Make the image fill the container */
+    max-width: 100%; /* Limit the width of the image */
+}
+
+.folders a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Color of the text */
 }
 
 .items-list {
