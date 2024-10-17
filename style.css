@@ -34,11 +34,12 @@ html, body {
 
 .about {
     width: 35vw; /* Set width for about section */
-    margin-left: 2%; /* Space between about and contact */
+    margin-left: 2%; /* Space between about and submit */
 }
 
-.contact {
-    width: 50vw; /* Set width for contact section */
+
+.submit {
+    width: 50vw; /* Set width for submit section */
 }
 
 @media (max-width: 800px) {
@@ -63,14 +64,14 @@ html, body {
         flex: 1; /* Allow content to grow */
     }
 
-    .about, .contact {
+    .about, .submit {
         display: flex; 
         width: 100%; /* Allow both sections to take full width */
         justify-content: space-between; /* Space them evenly */
-        margin: 1%; /* Space between about and contact */
+        margin: 1%; /* Space between about and submit */
     }
 
-    .about .title, .contact .title {
+    .about .title, .submit .title {
         cursor: pointer; 
         text-decoration: underline; 
     }
@@ -105,7 +106,7 @@ html, body {
     padding-right: 2%;
 }
 
-.about .title, .contact .title {
+.about .title, .submit .title {
     cursor: pointer; /* Show that it's clickable */
     text-decoration: underline; /* Underline the text */
 }
