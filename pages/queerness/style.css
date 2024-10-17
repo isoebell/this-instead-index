@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'FragmentMono';
+    src: url('fonts/FragmentMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'FragmentMono', monospace;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+    display: flex; /* Use Flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.nav-container {
+    display: flex;
+    align-items: flex-start; /* Center the items vertically */
+    margin-top: 0.3%; /* Space above the navigation bar */
+    margin-left: 0.3%; /* Space to the left of the navigation bar */
+}
+
+.header {
+    text-align: left;
+    font-size: 1em;
+    width: 15vw; /* Set width for header */
+    margin-bottom: 2%; /* Space below the header */
+}
+
+.header a {
+    text-decoration: underline; /* Remove underline from links */
+    color: #000; /* Color of the text */
+}
+
+.header a:hover {
+    color: #00ff2a; /* Change the color when hovered */
+}
+
+.about {
+    width: 35vw; /* Set width for about section */
+    margin-left: 2%; /* Space between about and submit */
+}
+
+
+.submit {
+    width: 50vw; /* Set width for submit section */
+}
+
+
+.page-image{
+    background-color: #ff00c9; /* Background color for visibility */
+    width: 50vw; /* Full width */
+    max-width: 100%;
+    height: 100%; /* Full height */
+}
+
+.go-back{
+    margin-top: 0.3%; /* Space above the navigation bar */
+    margin-left: 0.3%; /* Space to the left of the navigation bar */
+}
+
+@media (max-width: 800px) {
+    .nav-container {
+        display: block; /* Stack items vertically */
+        align-items: start; /* Align items to the start */
+    }
+
+    .header {
+        text-align: left; /* Center the header text */
+        margin-bottom: 2%; 
+    }
+
+    .header-title {
+        font-size: 2em; /* Increase font size for visibility */
+    }
+
+    .content-container {
+        display: flex; 
+        flex-direction: column; /* Stack items in a column */
+        width: 100%; 
+        flex: 1; /* Allow content to grow */
+    }
+
+    .about, .submit {
+        display: flex; 
+        width: 100%; /* Allow both sections to take full width */
+        justify-content: space-between; /* Space them evenly */
+        margin: 1%; /* Space between about and submit */
+    }
+
+    .about .title, .submit .title {
+        cursor: pointer; 
+        text-decoration: underline; 
+    }
+}
+
+.footer {
+    display: block; /* Display the footer */
+    padding-top: 1em; /* Padding inside the footer */
+    margin-top: auto; /* Push footer to the bottom */
+    background-color: #ff6600; /* Background color for visibility */
+    height: 5vh; /* Set a fixed height for the footer */
+    align-items: start; /* Align items to the top */
+    }
+
+.footer p {
+    align-items: start; /* Align items to the top */
+    padding-left: 0.3%; /* Space from the left edge */
+    padding-bottom: 1%; /* Space below the text */
+}
+
+.footer a {
+    color: #000; /* Color of the links */
+    text-decoration: underline; /* Underline the links */
+}
+
+.footer a:hover {
+    color: #00ff2a; /* Change the color when hovered */
+}
+
+.header-title {
+    width: max-content; /* Width of the title */
+    padding-right: 2%;
+}
+
+.about .title, .submit .title {
+    cursor: pointer; /* Show that it's clickable */
+    text-decoration: underline; /* Underline the text */
+}
+
+.topic-title {
+    border: 0.1em solid #000; /* Border color and width */
+    border-radius: 1em; /* Rounded corners */
+    padding: 0.5em; /* Space inside the rectangle */
+    text-align: center; /* Center the text */
+    width: max-content; /* Width of the rectangle */
+    height: min-content; /* Height of the rectangle */
+    margin: 2% 0; /* Space around the rectangle */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.content-container {
+    display: flex; /* Flex for the content */
+    width: 100%; /* Full width below the header */
+    height: 100vh; /* Full height for the content */
+    flex: 1; /* Allow the content to grow */
+    margin-top: 0.3%;
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+}
+
+@media (max-width: 800px) {
+    .content-container {
+        flex-direction: column; /* Stack items in a column */
+        flex: 0 1 100%; /* Full width for each item */
+    }
+
+    .folders {
+        order: 1; /* Ensure folders come first */
+        width: 100%; /* Full width for folders */
+        grid-template-columns: repeat(2, 1fr); /* Two columns across */
+    }
+
+    .folders img {
+        width: 100%; /* Make the image fill the container */
+        max-width: 100%; /* Limit the width of the image */
+    }
+
+    .items-list {
+        order: 2; /* Ensure items-list comes second */
+        width: 100%; /* Full width for items-list */
+    }
+}
+
+.folders {
+    margin: 0.2em;
+    margin-top: 2%;
+    display: grid; /* Change to grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 4 columns across */
+    gap: 1em; /* Space between grid items */
+    width: 50vw; /* Width of the folder */
+    height: auto; /* Adjust height to fit content */
+    align-items: start; /* Align items to the start */
+    text-align: left; /* Align text to the left */
+}
+
+.folders img {
+    width: 80%; /* Make the image fill the container */
+    max-width: 100%; /* Limit the width of the image */
+}
+
+.folders a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Color of the text */
+}
+
+.items-list {
+    display: block;
+    width: 50vw; /* Width of the list */
+    max-width: 100%; /* Limit the width of the list */
+    height: 100%; /* Adjust height to fill available space */
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+}
+
+.item .title:hover {
+    color: #00ff2a; /* Change the color of the text when hovered */
+}
+
+.hidden {
+    display: none;
+}
+
+.infoText {
+    margin-top: 0.5em; /* Spacing above info text */
+    font-size: 1em; 
+    color: #000;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.infoText a {
+    color: #000;
+}
+
+.infoText a:hover {
+    color: #00ff2a;
+}
+
+/* Add any additional styles here */
