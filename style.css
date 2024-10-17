@@ -133,18 +133,18 @@ html, body {
 @media (max-width: 800px) {
     .content-container {
         flex-direction: column; /* Stack items in a column */
-    }
-
-    .content-container a {
         flex: 0 1 100%; /* Full width for each item */
-        margin: 0.5em 0; /* Space between images vertically */
     }
 
     .folders {
         order: 1; /* Ensure folders come first */
         width: 100%; /* Full width for folders */
-        width: 100%; /* Full width for mobile */
-        grid-template-columns: repeat(2, 1fr); /* Adjust grid columns if needed */
+        grid-template-columns: repeat(2, 1fr); /* Two columns across */
+    }
+
+    .folders img {
+        width: 100%; /* Make the image fill the container */
+        max-width: 100%; /* Limit the width of the image */
     }
 
     .items-list {
