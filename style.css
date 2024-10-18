@@ -32,6 +32,17 @@ html, body {
     font-size: 1em;
     width: 15vw; /* Set width for header */
     margin-bottom: 2%; /* Space below the header */
+    margin-left: 0.5%; /* Space to the left of the header */
+    margin-top: 0.5%; /* Space above the header */
+}
+
+.header a {
+    text-decoration: underline; /* Remove underline from links */
+    color: #000; /* Color of the text */
+}
+
+.header a:hover {
+    color: #00ff2a; /* Change the color when hovered */
 }
 
 .header-title {
@@ -42,11 +53,14 @@ html, body {
 /* About and Submit Styles */
 .about {
     width: 34vw; /* Set width for about section */
+    margin-top: 0.5%; /* Space above the about section */
     margin-left: 2%; /* Space between about and submit */
+    margin-right: 2%; /* Space to the right of the list */
 }
 
 .submit {
     width: 50vw; /* Set width for submit section */
+    margin-top: 0.5%; /* Space above the submit section */
 }
 
 .about .title, .submit .title {
@@ -74,7 +88,7 @@ html, body {
     border: 0.1em solid #000; /* Border color and width */
     border-radius: 1em; /* Rounded corners */
     padding: 0.5em; /* Space inside the rectangle */
-    text-align: center; /* Center the text */
+    text-align: left; /* Left align the text */
     width: max-content; /* Width of the rectangle */
     height: min-content; /* Height of the rectangle */
     margin: 2% 0; /* Space around the rectangle */
@@ -87,7 +101,7 @@ html, body {
     padding-top: 1em; /* Padding inside the footer */
     margin-top: auto; /* Push footer to the bottom */
     background-color: #ff6600; /* Background color for visibility */
-    height: 20vh; /* Set a fixed height for the footer */
+    height: 5vh; /* Set a fixed height for the footer */
     align-items: start; /* Align items to the top */
 }
 
@@ -106,7 +120,7 @@ html, body {
     color: #00ff2a; /* Change the color when hovered */
 }
 
-/* Folders and Items Styles */
+/* Folders, Page-image and Items Styles */
 .folders {
     margin: 0.2em;
     margin-top: 2%;
@@ -135,10 +149,18 @@ html, body {
     text-decoration: underline; /* Underline the text */
 }
 
+.page-image {
+    background-color: #ff6600; /* Background color for visibility */
+    width: 50vw; /* Width of the page image */
+    height: 100%; /* Full height */
+}
+
 .items-list {
     display: block;
     width: 50vw; /* Width of the list */
     height: 100%; /* Adjust height to fill available space */
+    margin-left: 0.5%; /* Space to the left of the list */
+    margin-right: 2%; /* Space to the right of the list */
 }
 
 .item {
@@ -220,6 +242,11 @@ html, body {
         margin: 1%; /* Space between about and submit */
     }
 
+    .about .item p.infoText,
+    .submit .item p.infoText {
+        width: 100vw; /* Full width for mobile */
+    }
+
     .about .title, .submit .title {
         cursor: pointer; 
         text-decoration: underline; 
@@ -237,6 +264,17 @@ html, body {
     }
 
     .folders img {
+        width: 100%; /* Make the image fill the container */
+        max-width: 100%; /* Limit the width of the image */
+    }
+
+    .page-image {
+        order: 1; /* Ensure folders come first */
+        width: 100%; /* Full width for folders */
+        grid-template-columns: repeat(2, 1fr); /* Two columns across */
+    }
+
+    .page-image img {
         width: 100%; /* Make the image fill the container */
         max-width: 100%; /* Limit the width of the image */
     }
