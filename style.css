@@ -222,6 +222,7 @@ html, body {
     .header {
         text-align: left; /* Center the header text */
         margin-bottom: 2%; 
+        padding-left: 2%; /* Space to the left of the header */
     }
 
     .header-title {
@@ -240,6 +241,7 @@ html, body {
         width: 100%; /* Allow both sections to take full width */
         justify-content: space-between; /* Space them evenly */
         margin: 1%; /* Space between about and submit */
+        padding-left: 2%; /* Space to the left of the list */
     }
 
     .about .item p.infoText,
@@ -261,11 +263,14 @@ html, body {
         order: 1; /* Ensure folders come first */
         width: 100%; /* Full width for folders */
         grid-template-columns: repeat(2, 1fr); /* Two columns across */
+        padding-right: 2%;
+        padding-left: 2%;
     }
 
     .folders img {
         width: 100%; /* Make the image fill the container */
         max-width: 100%; /* Limit the width of the image */
+        
     }
 
     .page-image {
@@ -282,6 +287,16 @@ html, body {
     .items-list {
         order: 2; /* Ensure items-list comes second */
         width: 100%; /* Full width for items-list */
+        padding-left: 2%;
+    }
+
+    .footer{
+        display: block; /* Display the footer */
+        padding: 1em; /* Padding inside the footer */
+        margin-top: auto; /* Push footer to the bottom */
+        background-color: #ff6600; /* Background color for visibility */
+        height: max-content; /* Set a fixed height for the footer */
+        align-items: start; /* Align items to the top */
     }
 }
 
