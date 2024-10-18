@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+/* Global Styles */
 * {
     font-family: 'FragmentMono', monospace;
     margin: 0; /* Reset default margin */
@@ -18,6 +19,7 @@ html, body {
     flex-direction: column; /* Stack children vertically */
 }
 
+/* Navigation Styles */
 .nav-container {
     display: flex;
     align-items: flex-start; /* Center the items vertically */
@@ -32,16 +34,163 @@ html, body {
     margin-bottom: 2%; /* Space below the header */
 }
 
-.about {
-    width: 35vw; /* Set width for about section */
-    margin-left: 2%; /* Space between about and submit */
+.header-title {
+    width: max-content; /* Width of the title */
+    padding-right: 2%;
 }
 
+/* About and Submit Styles */
+.about {
+    width: 34vw; /* Set width for about section */
+    margin-left: 2%; /* Space between about and submit */
+}
 
 .submit {
     width: 50vw; /* Set width for submit section */
 }
 
+.about .title, .submit .title {
+    cursor: pointer; /* Show that it's clickable */
+    text-decoration: underline; /* Underline the text */
+}
+
+/* Content Container */
+.content-container {
+    display: flex; /* Flex for the content */
+    width: 100%; /* Full width below the header */
+    flex: 1; /* Allow the content to grow */
+    margin-top: 0.3%;
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+    transition: opacity 0.5s; /* Add fade effect */
+}
+
+.content-container.fade {
+    opacity: 0.2; /* Make it semi-transparent when faded */
+}
+
+/* Topic Title Styles */
+.topic-title {
+    border: 0.1em solid #000; /* Border color and width */
+    border-radius: 1em; /* Rounded corners */
+    padding: 0.5em; /* Space inside the rectangle */
+    text-align: center; /* Center the text */
+    width: max-content; /* Width of the rectangle */
+    height: min-content; /* Height of the rectangle */
+    margin: 2% 0; /* Space around the rectangle */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Footer Styles */
+.footer {
+    display: block; /* Display the footer */
+    padding-top: 1em; /* Padding inside the footer */
+    margin-top: auto; /* Push footer to the bottom */
+    background-color: #ff6600; /* Background color for visibility */
+    height: 20vh; /* Set a fixed height for the footer */
+    align-items: start; /* Align items to the top */
+}
+
+.footer p {
+    align-items: start; /* Align items to the top */
+    padding-left: 0.3%; /* Space from the left edge */
+    padding-bottom: 1%; /* Space below the text */
+}
+
+.footer a {
+    color: #000; /* Color of the links */
+    text-decoration: underline; /* Underline the links */
+}
+
+.footer a:hover {
+    color: #00ff2a; /* Change the color when hovered */
+}
+
+/* Folders and Items Styles */
+.folders {
+    margin: 0.2em;
+    margin-top: 2%;
+    display: grid; /* Change to grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns across */
+    gap: 1em; /* Space between grid items */
+    width: 50vw; /* Width of the folder */
+    height: auto; /* Adjust height to fit content */
+    align-items: start; /* Align items to the start */
+    text-align: left; /* Align text to the left */
+}
+
+.folders img {
+    width: 80%; /* Make the image fill the container */
+    max-width: 100%; /* Limit the width of the image */
+}
+
+.folders a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Color of the text */
+}
+
+.folders p {
+    margin-top: 0.5em; /* Spacing above the text */
+    font-size: 1em; /* Font size of the text */
+    text-decoration: underline; /* Underline the text */
+}
+
+.items-list {
+    display: block;
+    width: 50vw; /* Width of the list */
+    height: 100%; /* Adjust height to fill available space */
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+}
+
+.item .title:hover {
+    color: #00ff2a; /* Change the color of the text when hovered */
+}
+
+/* Info Text Styles */
+.hidden {
+    display: none;
+}
+
+.items-list .infoText {
+    margin-top: 0.5em; /* Spacing above info text */
+    font-size: 1em; 
+    color: #000;
+}
+
+.about .item .infoText,
+.submit .item .infoText {
+    margin-top: 0.5em; /* Spacing above info text */
+    font-size: 1em; 
+    color: #000;
+    position: absolute; /* Position dropdowns absolutely */
+    background-color: white; /* Background for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+}
+
+/* When the infoText is not hidden */
+.about .item .infoText:not(.hidden),
+.submit .item .infoText:not(.hidden) {
+    display: block; /* Show the infoText */
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.infoText a {
+    color: #000;
+}
+
+.infoText a:hover {
+    color: #00ff2a;
+}
+
+/* Media Queries */
 @media (max-width: 800px) {
     .nav-container {
         display: block; /* Stack items vertically */
@@ -75,63 +224,7 @@ html, body {
         cursor: pointer; 
         text-decoration: underline; 
     }
-}
 
-.footer {
-    display: block; /* Display the footer */
-    padding-top: 1em; /* Padding inside the footer */
-    margin-top: auto; /* Push footer to the bottom */
-    background-color: #ff6600; /* Background color for visibility */
-    height: 20vh; /* Set a fixed height for the footer */
-    align-items: start; /* Align items to the top */
-}
-
-.footer p {
-    align-items: start; /* Align items to the top */
-    padding-left: 0.3%; /* Space from the left edge */
-    padding-bottom: 1%; /* Space below the text */
-}
-
-.footer a {
-    color: #000; /* Color of the links */
-    text-decoration: underline; /* Underline the links */
-}
-
-.footer a:hover {
-    color: #00ff2a; /* Change the color when hovered */
-}
-
-.header-title {
-    width: max-content; /* Width of the title */
-    padding-right: 2%;
-}
-
-.about .title, .submit .title {
-    cursor: pointer; /* Show that it's clickable */
-    text-decoration: underline; /* Underline the text */
-}
-
-.topic-title {
-    border: 0.1em solid #000; /* Border color and width */
-    border-radius: 1em; /* Rounded corners */
-    padding: 0.5em; /* Space inside the rectangle */
-    text-align: center; /* Center the text */
-    width: max-content; /* Width of the rectangle */
-    height: min-content; /* Height of the rectangle */
-    margin: 2% 0; /* Space around the rectangle */
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-.content-container {
-    display: flex; /* Flex for the content */
-    width: 100%; /* Full width below the header */
-    flex: 1; /* Allow the content to grow */
-    margin-top: 0.3%;
-    margin-left: 0.5%;
-    margin-bottom: 1%;
-}
-
-@media (max-width: 800px) {
     .content-container {
         flex-direction: column; /* Stack items in a column */
         flex: 0 1 100%; /* Full width for each item */
@@ -154,63 +247,33 @@ html, body {
     }
 }
 
-.folders {
-    margin: 0.2em;
-    margin-top: 2%;
-    display: grid; /* Change to grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 4 columns across */
-    gap: 1em; /* Space between grid items */
-    width: 50vw; /* Width of the folder */
-    height: auto; /* Adjust height to fit content */
-    align-items: start; /* Align items to the start */
-    text-align: left; /* Align text to the left */
+/* Additional Styles */
+.folder-item a img[alt="orange-folder"]:hover + p {
+    color: #ff7300; /* Change this to your desired hover color */
 }
 
-.folders img {
-    width: 80%; /* Make the image fill the container */
-    max-width: 100%; /* Limit the width of the image */
+.folder-item a img[alt="pink-folder"]:hover + p {
+    color: #ff00c9; /* Change this to your desired hover color */
 }
 
-.folders a {
-    text-decoration: none; /* Remove underline from links */
-    color: #000; /* Color of the text */
+.folder-item a img[alt="lime-folder"]:hover + p {
+    color: #ccff00; /* Change this to your desired hover color */
 }
 
-.items-list {
-    display: block;
-    width: 50vw; /* Width of the list */
-    height: 100%; /* Adjust height to fill available space */
+.folder-item a img[alt="green-folder"]:hover + p {
+    color: #00ff2a; /* Change this to your desired hover color */
 }
 
-.item {
-    cursor: pointer;
-    position: relative;
+.folder-item a img[alt="cyan-folder"]:hover + p {
+    color: #00edff; /* Change this to your desired hover color */
 }
 
-.item .title:hover {
-    color: #00ff2a; /* Change the color of the text when hovered */
+.folder-item a img[alt="blue-folder"]:hover + p {
+    color: #0000ff; /* Change this to your desired hover color */
 }
 
-.hidden {
-    display: none;
-}
-
-.infoText {
-    margin-top: 0.5em; /* Spacing above info text */
-    font-size: 1em; 
-    color: #000;
-}
-
-.underline {
-    text-decoration: underline;
-}
-
-.infoText a {
-    color: #000;
-}
-
-.infoText a:hover {
-    color: #00ff2a;
+.folder-item a img[alt="yellow-folder"]:hover + p {
+    color: #ffcc00; /* Change this to your desired hover color */
 }
 
 /* Add any additional styles here */
