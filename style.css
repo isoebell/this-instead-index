@@ -52,14 +52,14 @@ html, body {
 
 /* About and Submit Styles */
 .about {
-    width: 34vw; /* Set width for about section */
+    width: 24vw; /* Set width for about section */
     margin-top: 0.5%; /* Space above the about section */
     margin-left: 2%; /* Space between about and submit */
     margin-right: 2%; /* Space to the right of the list */
 }
 
 .submit {
-    width: 50vw; /* Set width for submit section */
+    width: 60vw; /* Set width for submit section */
     margin-top: 0.5%; /* Space above the submit section */
 }
 
@@ -90,9 +90,10 @@ html, body {
     padding: 0.5em; /* Space inside the rectangle */
     text-align: left; /* Left align the text */
     width: max-content; /* Width of the rectangle */
+    max-width: 40VW; /* Limit the width of the rectangle */
     height: min-content; /* Height of the rectangle */
     margin: 2% 0; /* Space around the rectangle */
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: normal; /* Allow text wrapping */
 }
 
 /* Footer Styles */
@@ -127,7 +128,7 @@ html, body {
     display: grid; /* Change to grid layout */
     grid-template-columns: repeat(3, 1fr); /* 3 columns across */
     gap: 1em; /* Space between grid items */
-    width: 50vw; /* Width of the folder */
+    width: 60vw; /* Width of the folder */
     height: auto; /* Adjust height to fit content */
     align-items: start; /* Align items to the start */
     text-align: left; /* Align text to the left */
@@ -150,14 +151,92 @@ html, body {
 }
 
 .page-image {
-    background-color: #ff6600; /* Background color for visibility */
-    width: 50vw; /* Width of the page image */
-    height: 100%; /* Full height */
+    /*background-color: #ff6600; /* Background color for visibility */
+    width: 100vw; /* Use the full width of the viewport */
+    max-width: 100%; /* Prevent exceeding the viewport width */
+    overflow: hidden; /* Hide any overflowing content */
+    margin: 0 auto; /* Centers the content */
+    padding-right: 2em; /* Padding around the embed */
+    box-sizing: border-box; /* Includes padding and border in width/height calculations */
+    justify-content: space-between; /* Space between items */
+}
+
+.media-container {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Space between items */
+    margin-bottom: 2em; /* Space below the media container */
+}
+
+.instagram-media,
+.youtube-embed {
+    width: 48%; /* Adjust width for spacing */
+    max-width: 100%; /* Prevent exceeding parent width */
+}
+
+.embedded-website {
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    margin: 0 auto; /* Center the iframe */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.embedded-website iframe {
+    width: 100%; /* Full width of the container */
+    height: 600px; /* Fixed height, adjust as needed */
+    border: none; /* Remove default border */
+}
+
+.custom-website{
+    height: 40vh; /* Set a specific height; adjust as needed */
+    margin-bottom: 1em; /* Add space below */
+}
+
+.youtube-embed {
+    position: relative; /* Position relative for absolute positioning of iframe */
+    aspect-ratio: 1; /* Ensure square aspect ratio */
+}
+
+.youtube-embed iframe {
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    border: none; /* Remove default border */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 1px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    position: absolute; /* Positioning to fill the parent div */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+}
+
+.spotify-embed {
+    max-width: 100%; /* Full width of the container */
+    margin: 0 auto; /* Centers the content */
+}
+
+.spotify-embed iframe {
+    width: 100%; /* Full width of the parent */
+    height: 80px; /* Fixed height for the Spotify embed */
+    border: none; /* Remove default border */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 1px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+.custom-spotify {
+    width: 80%; /* Set a specific width; adjust as needed */
+    max-width: 25em; /* Max width to prevent it from getting too large */
+    margin: 0 auto; /* Center the player */
+}
+
+.custom-spotify iframe {
+    width: 100%; /* Ensure the iframe takes the full width of the custom class */
+    height: 50; /* Use viewport height for a responsive height */
+    border: none; /* Remove default border */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 1px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
 }
 
 .items-list {
     display: block;
-    width: 50vw; /* Width of the list */
+    width: 100%; /* Width of the list */
+    max-width: 40vw; /* Limit the width of the list */
     height: 100%; /* Adjust height to fill available space */
     margin-left: 0.5%; /* Space to the left of the list */
     margin-right: 2%; /* Space to the right of the list */
@@ -181,6 +260,7 @@ html, body {
     margin-top: 0.5em; /* Spacing above info text */
     font-size: 1em; 
     color: #000;
+    padding-left: 5%;
 }
 
 .about .item .infoText,
@@ -257,6 +337,28 @@ html, body {
     .content-container {
         flex-direction: column; /* Stack items in a column */
         flex: 0 1 100%; /* Full width for each item */
+        box-sizing: border-box; /* Include padding and border in width/height calculations */
+        padding-right: 3%;
+    }
+
+    .topic{
+        margin-top: 1em;
+    }
+
+    .topic-title {
+        border: 0.1em solid #000; /* Border color and width */
+        border-radius: 1em; /* Rounded corners */
+        padding: 0.5em; /* Space inside the rectangle */
+        text-align: left; /* Left align the text */
+        width: 100%; /* Set to full width to allow wrapping */
+        max-width: 100vw; /* Limit the width of the rectangle */
+        height: min-content; /* Height of the rectangle */
+        margin: 2% 0; /* Space around the rectangle */
+        white-space: normal; /* Allow text wrapping */
+    }
+    
+    .topic-description{
+        padding-left: 2%;
     }
 
     .folders {
@@ -274,20 +376,43 @@ html, body {
     }
 
     .page-image {
-        order: 1; /* Ensure folders come first */
-        width: 100%; /* Full width for folders */
+        order: 3; /* Ensure folders come first */     
         grid-template-columns: repeat(2, 1fr); /* Two columns across */
+        padding-right: 0; /* Adjust padding for mobile */
+        width: 100vw; /* Use the full width of the viewport */
+        max-width: 100%; /* Prevent exceeding the viewport width */
+        padding-left: 3%; /* Space to the left of the page-image */
+     }
+
+        .media-container {
+        flex-direction: column; /* Stack media elements vertically */
+        align-items: center; /* Center align items */
     }
 
-    .page-image img {
-        width: 100%; /* Make the image fill the container */
-        max-width: 100%; /* Limit the width of the image */
+    .instagram-media,
+    .youtube-embed {
+        width: 100%; /* Full width for mobile */
+        max-width: none; /* Remove max-width constraint */
+        margin-bottom: 1em; /* Add space between media elements */
+    }
+
+    .spotify-embed {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 1em; /* Add space below */
     }
 
     .items-list {
         order: 2; /* Ensure items-list comes second */
         width: 100%; /* Full width for items-list */
+        max-width: none; /* Remove max-width constraint */
         padding-left: 2%;
+        height: auto; /* Adjust height to fit content */
+        margin-bottom: 1em; /* Add space below */
+    }
+
+
+    .items-list .infoText {
+        padding-left: 0; /* Remove padding for mobile */
     }
 
     .footer{
