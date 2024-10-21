@@ -1,3 +1,11 @@
+// Function to hide all info sections
+function hideAllInfo() {
+    document.querySelectorAll('.infoText').forEach(info => {
+        info.classList.add('hidden');
+    });
+    document.querySelector('.content-container').classList.remove('fade');
+}
+
 // Handle About section
 document.querySelectorAll('.about .item').forEach(item => {
     const title = item.querySelector('.title');
@@ -5,7 +13,8 @@ document.querySelectorAll('.about .item').forEach(item => {
     const contentContainer = document.querySelector('.content-container');
 
     if (title) {
-        title.addEventListener('click', () => {
+        title.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the document click from firing
             info.classList.toggle('hidden');
             contentContainer.classList.toggle('fade', !info.classList.contains('hidden'));
         });
@@ -19,7 +28,8 @@ document.querySelectorAll('.submit .item').forEach(item => {
     const contentContainer = document.querySelector('.content-container');
 
     if (title) {
-        title.addEventListener('click', () => {
+        title.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the document click from firing
             info.classList.toggle('hidden');
             contentContainer.classList.toggle('fade', !info.classList.contains('hidden'));
         });
@@ -32,9 +42,14 @@ document.querySelectorAll('.grid-container .item').forEach(item => {
     const info = item.querySelector('.infoText');
 
     if (title) {
-        title.addEventListener('click', () => {
-            // Toggle the visibility of the info paragraph
+        title.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the document click from firing
             info.classList.toggle('hidden');
         });
     }
+});
+
+// Handle clicks on the document
+document.addEventListener('click', () => {
+    hideAllInfo(); // Hide all info sections when clicking anywhere else
 });
